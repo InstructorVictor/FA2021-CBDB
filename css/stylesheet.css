@@ -1,0 +1,65 @@
+/* Activate the use of the font from fontsquirrel.com */
+@font-face {
+    font-family: 'kaushan_scriptregular';
+    src: url('kaushanscript-regular.woff2') format('woff2'),
+         url('kaushanscript-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Use the font in Headings */
+h1, h2 {
+    font-family: 'kaushan_scriptregular';
+}
+
+/* Resize the Welcome Image using a Class */
+.imgMain {
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px black;
+}
+
+/* Fix the bug in popups being transparent */
+.ui-dialog-contain>.ui-content {
+    background-color: beige;
+    color: black;
+}
+
+/** Comic Table Styling **/
+/* Basic <table> */
+div#divViewComics table { 
+  background-color: red; 
+  margin: auto;
+  width: 75%;
+  border: 11px dashed gold;
+  word-wrap: break-word;
+}
+
+/* Style the Heading Row <th> */
+div#divViewComics table tr th {
+  background-color: rgb(189, 176, 0);
+  color: pink;
+}
+
+/* Style regular cells <td> and <th> */
+div#divViewComics table tr td,
+ div#divViewComics table tr th {
+  border: 3px solid bisque;
+}
+
+/* Apply Zebra Stripping for readability */
+div#divViewComics table tr:nth-of-type(odd) {
+  background-color: rgb(0, 50, 200);
+}
+
+div#divViewComics table tr:nth-of-type(even) {
+  background-color: rgba(0, 50, 200, 0.5);
+}
+
+/*
+    Name: Victor Campos <vcampos@sdccd.edu>
+    Project: CBDB (The Comic Book Database)
+    Version: 1.0
+    Date: 2022-01-20
+    Notes: App to store, load, edit comic entries, for different users.
+*/

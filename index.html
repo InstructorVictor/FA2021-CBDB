@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- CSP is used to set what resources your app can access -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <!-- Required Monaca stuff. Do not edit -->
+    <script src="components/loader.js"></script>
+    <!-- Required Monaca stuff. Do not edit -->
+    <link rel="stylesheet" href="components/loader.css">
+    <!-- jQM Base CSS -->
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <!-- jQM Themeroller -->
+    <link rel="stylesheet" href="css/mycolors.min.css">
+    <!-- Custom CSS Code -->
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+    <!-- START Welcome -->
+    <section data-role="page" id="pgWelcome">
+        <article role="main" class="ui-content">
+            <h2>CBDB</h2>
+            <p><img src="images/straydogs.jpg" class="imgMain"></p>
+            <p>Need an account? <a href="#pgSignUp" data-role="button">Create an account</a></p>
+            <p><a href="#pgLogIn" data-role="button">Log In</a></p>
+        </article>
+    </section>
+    <!-- END Welcome -->
+
+    <!-- START Sign Up -->
+    <section data-role="page" id="pgSignUp">
+        <header data-role="header" data-add-back-btn="true">
+            <h1>Sign Up!</h1>
+        </header>
+        <article role="main" class="ui-content">
+            <!-- A <form> Element to ask for creations for creating an account -->
+            <form id="fmSignUp">
+                <label for="inEmailSignUp">Email:</label>
+                 <input name="inEmailSignUp" type="email" placeholder="bruce@wayne.net" required id="inEmailSignUp">
+                <label for="inPasswordSignUp">Password:</label>
+                 <input name="inPasswordSignUp" type="password" placeholder="Spider99!" required id="inPasswordSignUp">
+                <label for="inPasswordConfirmSignUp">Confirm Password:</label>
+                 <input name="inPasswordConfirmSignUp" type="password" placeholder="Spider99!" required id="inPasswordConfirmSignUp">
+                 <!-- Grid with 2 columns in a Form. Note FIELDSET-->
+                 <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><input type="reset" value="Clear"></div>
+                    <div class="ui-block-b"> <input type="submit" value="Go"></div>
+                 </fieldset>
+            </form>
+        </article>
+    </section>
+    <!-- END Sign Up -->
+    
+    <!-- START Log In -->
+    <section data-role="page" id="pgLogIn">
+        <header data-role="header" data-add-back-btn="true">
+            <h1>Log In!</h1>
+        </header>
+        <article role="main" class="ui-content">
+            <form id="fmLogIn">
+                <label for="inEmailLogIn">Email:</label>
+                 <input name="inEmailLogIn" type="email" placeholder="selina@cat.biz" required id="inEmailLogIn">
+                <label for="inPasswordLogIn">Password:</label>
+                 <input name="inPasswordLogIn" type="password" placeholder="Spider99!" required id="inPasswordLogIn">
+                 <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><input type="reset" value="Clear"> </div>
+                    <div class="ui-block-b"><input type="submit" value="Go"> </div>
+                 </fieldset>
+            </form>
+        </article>
+    </section>
+    <!-- END Log In -->
+
+    <!-- START Home Screen -->
+    <section data-role="page" data-theme="b" id="pgHome">
+        <!-- Content at the top of the screen -->
+        <header data-role="header">
+            <a href="#pgOptions" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-transition="pop">Options</a>
+            <h1>CBDB</h1>
+            <nav data-role="navbar">
+                <ul>
+                    <li><a href="#pgHome" data-icon="home" data-transition="flip" class="ui-btn-active ui-state-persist">Home</a></li>
+                    <li><a href="#pgSave" data-transition="flip" data-icon="bars">Save</a></li>
+                    <li><a href="#pgView" data-transition="flip" data-icon="comment">View</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Main content in the middle -->
+        <article role="main" class="ui-content">
+            <h2>Home</h2>
+            <p><img src="images/sd2.jpg" class="imgMain"></p>
+        </article>
+        <footer data-role="footer" data-position="fixed">
+            <h4 class="userEmail">Copyright &copy; 2022</h4>
+        </footer>
+    </section> 
+    <!-- END Home Screen -->
+
+    <!-- START Save Screen -->
+    <section data-role="page" data-theme="c" id="pgSave">
+        <header data-role="header">
+            <h1>Save Comic</h1>
+            <nav data-role="navbar">
+                <ul>
+                    <li><a href="#pgHome" data-icon="home" data-transition="flip" >Home</a></li>
+                    <li><a href="#pgSave" data-icon="bars" data-transition="flip"  class="ui-btn-active ui-state-persist">Save</a></li>
+                    <li><a href="#pgView" data-transition="flip"  data-icon="comment">View</a></li>
+                    <li><a href="#pgOptions" data-transition="flip"  data-icon="star" >Options</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article role="main" class="ui-content">
+            <!-- <form> to save inventory -->
+            <form id="fmSaveComic">
+                <!-- Set up optional and required data to save -->
+                <fieldset>
+                    <legend>Required</legend>
+                    <label for="inTitleSave">Title: </label>
+                        <input name="inTitleSave" type="text" required placeholder="Batman" id="inTitleSave">
+                    <label for="inNumberSave">Number: </label>
+                        <input name="inNumberSave" type="number" required placeholder="1" id="inNumberSave">
+                    <label for="inYearSave">Year: </label>
+                        <input name="inYearSave" type="number" required placeholder="1940" id="inYearSave">
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Optional</legend>
+                    <label for="inPublisherSave">Publisher: </label>
+                    <input name="inPublisherSave" type="text" placeholder="DC Comics" id="inPublisherSave">
+                    <label for="inNotesSave">Notes: </label>
+                    <textarea name="inNotesSave" placeholder="First regular series." id="inNotesSave"></textarea>
+                    <!-- Photo features -->
+                        <!-- Button to start the Camera plugin -->
+                    <input type="button" data-icon="camera" value="Snapshot" id="btnTakePhoto">
+                        <!-- Placeholder to hold the path to photo after snapping -->
+                    <input type="text" placeholder="/images/photos" disabled id="inPhotoSavePath"> 
+                        <!-- Placeholder for preview of the photo -->
+                    <img src="#" style="display: none;" id="inPhotoSaveImg"> 
+
+                </fieldset>
+                <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><input type="reset" value="Cancel"> </div>
+                    <div class="ui-block-b"><input type="submit" value="Save"> </div>
+                </fieldset>
+            </form>
+        </article>
+        <footer data-role="footer" data-position="fixed">
+            <h4>Copyright 2021</h4>
+        </footer>
+    </section> <!-- END Save Screen -->
+
+    <!-- START View Screen -->
+    <section data-role="page" data-theme="d" id="pgView">
+        <header data-role="header">
+            <h1>View Comics</h1>
+            <nav data-role="navbar">
+                <ul>
+                    <li><a href="#pgHome" data-icon="home" data-transition="flip">Home</a></li>
+                    <li><a href="#pgSave" data-icon="bars" data-transition="flip">Save</a></li>
+                    <li><a href="#pgView" data-icon="comment" data-transition="flip" class="ui-btn-active ui-state-persist">View</a></li>
+                    <li><a href="#pgOptions" data-icon="star" data-transition="flip">Options</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article role="main" class="ui-content">
+            <h2>View</h2>
+            <!-- Placeholder for displaying our comics -->
+            <div id="divViewComics">TeserserserserMP</div>
+        </article>
+        <footer data-role="footer" data-position="fixed">
+            <h4>Copyright 2021</h4>
+        </footer>
+    </section> 
+    <!-- END View Screen --> 
+
+    <!-- START Options screen -->
+    <section data-role="page" data-dialog="true" data-theme="c" id="pgOptions">
+        <header data-role="header">
+            <h1>Options</h1>
+        </header>
+        <article role="main" class="ui-content">
+            <p><a href="#" data-role="button" data-icon="power" id="btnLogOut">Log Out</a></p>
+            <p><a href="#" data-role="button" data-icon="cancel" id="btnDeleteCollection">Delete Collection</a></p>
+        </article>
+    </section> 
+    <!-- END Options screen -->
+
+    <!-- START View/Edit Comic -->
+    <section data-role="page" id="pgComicViewEdit">
+      <header data-role="header">
+        <h1>Edit</h1>
+      </header>
+      <article role="main" class="ui-content">
+        <!-- Load the details of the comic in a form, to either view or update any details -->
+        <form id="fmEditComicInfo">
+            <label for="inTitleEdit">Title</label>
+              <input type="text" name="inTitleEdit" id="inTitleEdit"> 
+            <label for="inNumberEdit">Number</label>
+              <input type="number" name="inNumberEdit" id="inNumberEdit"> 
+            <label for="inYearEdit">Year</label>
+              <input type="number" name="inYearEdit" id="inYearEdit"> 
+            <label for="inPublisherEdit">Publisher</label>
+              <input type="text" name="inPublisherEdit" id="inPublisherEdit"> 
+            <label for="inNotesEdit">Notes</label>
+              <textarea name="inNotesEdit" id="inNotesEdit"></textarea> 
+              <input type="text" disabled id="inPhotoEditPath"> 
+              <img src="#" id="inPhotoEditImg"> 
+            <input type="submit" value="Update"> 
+            <input type="button" value="Delete" id="btnDeleteComic"> 
+            <input type="button" value="Cancel" id="btnEditComicCancel">
+        </form>
+      </article>
+    </section>
+    <!-- END View/Edit Comic -->
+
+    <!-- Best practice to have JS after HTML, so that it can interact properly   -->
+    <!-- jQM Libraries -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <!-- PouchDB Database Library -->
+    <script src="js/pouchdb-7.2.1.min.js"></script>
+    <!-- Custom JavaScript; You should usually keep your custom JavaScript LAST -->
+    <script src="js/javascript.js"></script>
+
+    <!-- 
+        Name: Victor Campos <vcampos@sdccd.edu>
+        Project: CBDB (The Comic Book Database)
+        Version: 1.0
+        Date: 2022-01-20
+        Notes: App to store, load, edit comic entries, for different users.
+    -->
+</body>
+</html>
